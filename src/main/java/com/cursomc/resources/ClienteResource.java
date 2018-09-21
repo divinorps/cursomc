@@ -19,6 +19,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.cursomc.domain.Cliente;
 import com.cursomc.dto.ClienteDTO;
+import com.cursomc.dto.ClienteNewDTO;
 import com.cursomc.service.ClienteService;
 
 import javassist.tools.rmi.ObjectNotFoundException;
@@ -39,9 +40,9 @@ public class ClienteResource {
 	
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<Void> insert(@Valid @RequestBody ClienteDTO clienteDTO){
-		Cliente cliente = service.fromDTO(clienteDTO);
-		//cliente = service.insert(cliente);
+	public ResponseEntity<Void> insert(@Valid @RequestBody ClienteNewDTO clienteNewDTO){
+		Cliente cliente = service.fromDTO(clienteNewDTO);
+		cliente = service.insert(cliente);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
 				.buildAndExpand(cliente.getId()).toUri();
 		return ResponseEntity.created(uri).build();
