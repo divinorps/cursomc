@@ -43,14 +43,14 @@ public class Cliente implements Serializable {
 	
 	public Cliente() {
 	}
-
+		
 	public Cliente(Integer id, String nome, String email, String cpfCnpj, TipoCliente tipo) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
 		this.cpfCnpj = cpfCnpj;
-		this.tipo = tipo.getId();
+		this.tipo = (tipo == null) ? null : tipo.getId();
 	}
 
 	public Integer getId() {
