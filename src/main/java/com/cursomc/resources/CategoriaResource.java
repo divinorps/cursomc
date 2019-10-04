@@ -25,7 +25,7 @@ import javassist.tools.rmi.ObjectNotFoundException;
 
 @RestController
 @RequestMapping(value = "/categorias")
-public class CaterogiaResource {
+public class CategoriaResource {
 
 	@Autowired
 	private CategoriaService service;

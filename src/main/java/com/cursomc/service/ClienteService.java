@@ -61,7 +61,7 @@ public class ClienteService {
 			repository.deleteById(id);
 
 		} catch (DataIntegrityViolationException e) {
-			throw new ObjetoNaoEncontradoException("Não é possível excluir porque há pedidos relacionadas.");
+			throw new ObjetoNaoEncontradoException("Não é possível excluir porque há pedidos relacionados.");
 		}
 	}
 
